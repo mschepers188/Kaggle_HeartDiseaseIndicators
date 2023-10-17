@@ -12,10 +12,10 @@ class FileParser:
             self.configs = yaml.safe_load(file)
 
     def load_dataframe(self):
-        # Return dataframe containing data
+        """
+        Takes the heart data path from the config file and returns it to user.
+        :return: Pandas Dataframe
+        """
         return pd.read_csv(self.configs['heart_data'])
 
 
-if __name__ == "__main__":
-    fileparser = FileParser('config.yaml')
-    print(fileparser.load_dataframe())
